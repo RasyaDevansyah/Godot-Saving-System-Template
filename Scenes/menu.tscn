@@ -1,0 +1,105 @@
+[gd_scene load_steps=7 format=3 uid="uid://d10hex1adrqw3"]
+
+[ext_resource type="Script" uid="uid://c04fu7hgougma" path="res://Scripts/menu.gd" id="1_158mb"]
+[ext_resource type="Script" uid="uid://5jq23depkr8i" path="res://Scripts/scoreboard.gd" id="1_lti8b"]
+[ext_resource type="Resource" uid="uid://cgk8bd70bc36" path="res://Resources/Scoreboard.tres" id="2_mae5d"]
+[ext_resource type="PackedScene" uid="uid://c7otsbsq4kjie" path="res://Scenes/scoreboard_row.tscn" id="2_ouk20"]
+
+[sub_resource type="Theme" id="Theme_vsb4k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lti8b"]
+bg_color = Color(0.6745098, 0.69411767, 0.24705882, 0.38039216)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_158mb")
+
+[node name="MenuUI" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 128.0
+offset_top = 486.0
+offset_right = 386.0
+offset_bottom = 552.0
+metadata/_edit_group_ = true
+
+[node name="Play" type="Button" parent="MenuUI"]
+layout_mode = 2
+text = "Play"
+
+[node name="Quit" type="Button" parent="MenuUI"]
+layout_mode = 2
+text = "Quit
+"
+
+[node name="Scoreboard" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -619.0
+offset_top = -178.0
+offset_right = -90.0
+offset_bottom = 199.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = SubResource("Theme_vsb4k")
+script = ExtResource("1_lti8b")
+scoreboard = ExtResource("2_mae5d")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Scoreboard"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Control" type="VBoxContainer" parent="Scoreboard/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Scoreboard/MarginContainer/Control"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 26
+text = "Scoreboard"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Scoreboard/MarginContainer/Control"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Scoreboard/MarginContainer/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_lti8b")
+text = "Name"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Scoreboard/MarginContainer/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_lti8b")
+text = "Score"
+horizontal_alignment = 1
+
+[node name="scrollContainer" type="ScrollContainer" parent="Scoreboard/MarginContainer/Control"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scoreboard/MarginContainer/Control/scrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScoreboardRow" parent="Scoreboard/MarginContainer/Control/scrollContainer/VBoxContainer" instance=ExtResource("2_ouk20")]
+layout_mode = 2
+
+[connection signal="pressed" from="MenuUI/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MenuUI/Quit" to="." method="_on_quit_pressed"]

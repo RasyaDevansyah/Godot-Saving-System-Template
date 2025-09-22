@@ -1,0 +1,122 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy0f871lcn08i"]
+
+[ext_resource type="Script" uid="uid://c4o0lgdty1uwo" path="res://Scripts/game_ui.gd" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://d3n7cb0ve3abf" path="res://Scripts/save_ui.gd" id="2_qxrlw"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameUI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ebmjs")
+
+[node name="PointsButton" type="Button" parent="GameUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -31.0
+offset_right = 88.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Get Points"
+
+[node name="Label" type="Label" parent="GameUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -135.0
+offset_right = 34.0
+offset_bottom = -85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "00"
+horizontal_alignment = 1
+
+[node name="EndGameButton" type="Button" parent="GameUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = 135.0
+offset_right = 42.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "End game"
+
+[node name="SaveUI" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_qxrlw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SaveUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.0
+offset_top = -33.0
+offset_right = 231.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="SaveUI/VBoxContainer"]
+layout_mode = 2
+text = "Enter Your Name"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="SaveUI/VBoxContainer"]
+layout_mode = 2
+max_length = 10
+
+[node name="SubmitButton" type="Button" parent="SaveUI"]
+layout_mode = 0
+offset_left = -66.0
+offset_top = 117.0
+offset_right = 106.0
+offset_bottom = 164.0
+text = "Submit"
+
+[connection signal="pressed" from="GameUI/PointsButton" to="GameUI" method="_on_points_button_pressed"]
+[connection signal="pressed" from="GameUI/EndGameButton" to="GameUI" method="_on_end_game_button_pressed"]
+[connection signal="pressed" from="SaveUI/SubmitButton" to="SaveUI" method="_on_submit_button_pressed"]
