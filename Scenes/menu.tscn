@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://d10hex1adrqw3"]
+[gd_scene load_steps=6 format=3 uid="uid://d10hex1adrqw3"]
 
 [ext_resource type="Script" uid="uid://c04fu7hgougma" path="res://Scripts/menu.gd" id="1_158mb"]
 [ext_resource type="Script" uid="uid://5jq23depkr8i" path="res://Scripts/scoreboard.gd" id="1_lti8b"]
-[ext_resource type="Resource" uid="uid://cgk8bd70bc36" path="res://Resources/Scoreboard.tres" id="2_mae5d"]
 [ext_resource type="PackedScene" uid="uid://c7otsbsq4kjie" path="res://Scenes/scoreboard_row.tscn" id="2_ouk20"]
 
 [sub_resource type="Theme" id="Theme_vsb4k"]
@@ -51,7 +50,6 @@ grow_horizontal = 0
 grow_vertical = 2
 theme = SubResource("Theme_vsb4k")
 script = ExtResource("1_lti8b")
-scoreboard = ExtResource("2_mae5d")
 metadata/_edit_group_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Scoreboard"]

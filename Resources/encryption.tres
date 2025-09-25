@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Encryption" load_steps=2 format=3 uid="uid://bto14ban2rt4c"]
+
+[ext_resource type="Script" uid="uid://cxnqmbadq85qc" path="res://Scripts/encryptionResource.gd" id="1_np2i2"]
+
+[resource]
+script = ExtResource("1_np2i2")
+key = "@*$*HSAUHFU))(@#*@QHUHFDSJB(uihwe879(*&#$iuhfkjfk"
+metadata/_custom_type_script = "uid://cxnqmbadq85qc"
