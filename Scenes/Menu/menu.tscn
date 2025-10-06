@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d10hex1adrqw3"]
+[gd_scene load_steps=7 format=3 uid="uid://d10hex1adrqw3"]
 
 [ext_resource type="Script" uid="uid://c04fu7hgougma" path="res://Scenes/Menu/menu.gd" id="1_3qr6s"]
 [ext_resource type="Script" uid="uid://5jq23depkr8i" path="res://Scenes/Menu/Scoreboard/scoreboard.gd" id="2_j7r1e"]
 [ext_resource type="PackedScene" uid="uid://c7otsbsq4kjie" path="res://Scenes/Menu/Scoreboard/scoreboard_row.tscn" id="3_8inha"]
+[ext_resource type="Script" uid="uid://cx83qfsvbtya2" path="res://Scenes/Menu/settings.gd" id="4_j7r1e"]
 
 [sub_resource type="Theme" id="Theme_vsb4k"]
 
@@ -29,6 +30,11 @@ metadata/_edit_group_ = true
 [node name="Play" type="Button" parent="MenuUI"]
 layout_mode = 2
 text = "Play"
+
+[node name="Settings" type="Button" parent="MenuUI"]
+layout_mode = 2
+text = "Settings
+"
 
 [node name="Quit" type="Button" parent="MenuUI"]
 layout_mode = 2
@@ -99,5 +105,105 @@ size_flags_vertical = 3
 [node name="ScoreboardRow" parent="Scoreboard/MarginContainer/Control/scrollContainer/VBoxContainer" instance=ExtResource("3_8inha")]
 layout_mode = 2
 
+[node name="Settings" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_j7r1e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -110.0
+offset_right = 205.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Settings/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Settings/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Settings/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="Settings/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -17.999999999999947
+max_value = 4.999999999999985
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Settings/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Settings/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sound"
+
+[node name="SoundSlider" type="HSlider" parent="Settings/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -17.999999999999947
+max_value = 4.999999999999985
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Settings/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Settings/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Screen Shake"
+
+[node name="ScreenShakeCheckBox" type="CheckBox" parent="Settings/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="Settings/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Back"
+
 [connection signal="pressed" from="MenuUI/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MenuUI/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MenuUI/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Settings/VBoxContainer/Button" to="Settings" method="_on_button_pressed"]

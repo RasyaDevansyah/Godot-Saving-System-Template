@@ -7,7 +7,7 @@ var playerPrefs : SaveFileResource
 
 func _ready() -> void:
 	loadEncryptedSave()
-	
+	loadPlayerPrefsSave()
 
 func loadPlayerPrefsSave():
 	var loadedPlayerPrefs = SaveFileResource.LoadSaveGame()
@@ -16,7 +16,7 @@ func loadPlayerPrefsSave():
 		playerPrefs = SaveFileResource.new()
 		playerPrefs.WriteSaveGame()
 	else:
-		print("Save file loaded successfully.")
+		print("Player prefs loaded successfully.")
 		playerPrefs = loadedPlayerPrefs
 
 func loadEncryptedSave():
