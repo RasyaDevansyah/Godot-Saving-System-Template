@@ -23,7 +23,8 @@ A minimal, easy-to-integrate saving system for Godot (resources + encrypted save
 	- `Scripts/EncryptedSaveFileSystem/EncryptedSaveFileResource.gd`
 	- `Scripts/EncryptedSaveFileSystem/encryption.tres` (encryption key resource)
 
-<img width="1179" height="234" alt="image" src="https://github.com/user-attachments/assets/09fe6872-3a80-4614-82ea-3da19d210f6b" />
+<img width="422" height="162" alt="image" src="https://github.com/user-attachments/assets/df7f3f72-8e1d-411b-a16b-c41dd5904346" />
+
 
 	NOTE: The `Scripts/EncryptedSaveFileSystem` and `Scripts/ResourceSaveFileSystem` folders are intended as standalone templates. If you want to reuse only the saving system in another project, copy these two folders (and `encryption.tres`) into your project and register the `SaveGlobalScript.gd` autoload in that project. Keep the relative resource path or update the path in `EncryptedSaveFileResource.gd` to match your new location.
 
@@ -31,7 +32,8 @@ A minimal, easy-to-integrate saving system for Godot (resources + encrypted save
 	 - In Godot Editor: Project -> Project Settings -> Autoload
 	 - Add `res://Scripts/Autoload/SaveGlobalScript.gd` and set the Node Name to `GlobalScript` (the project uses `GlobalScript` in scenes/scripts).
 
-<img width="509" height="522" alt="image" src="https://github.com/user-attachments/assets/779e159e-1982-431f-ad21-22223d7deb6e" />
+<img width="1179" height="234" alt="image" src="https://github.com/user-attachments/assets/83c31c3a-81eb-4837-bcdc-490e2bc8af6a" />
+
 
 3. Ensure the encryption resource path is valid:
 	 - `EncryptedSaveFileResource.gd` loads the key from `res://Scripts/EncryptedSaveFileSystem/encryption.tres`. Replace this path or the resource as needed.
@@ -109,7 +111,8 @@ project.godot
 <img width="643" height="613" alt="image" src="https://github.com/user-attachments/assets/a64020ba-b73e-424b-a000-0599f7ac8486" />
 
 
-<img width="643" height="613" alt="image" src="https://github.com/user-attachments/assets/ba9b0feb-515b-4c3c-88bf-fff6c3521bdf" />
+<img width="509" height="522" alt="image" src="https://github.com/user-attachments/assets/1fe055f1-93a7-411e-9dc3-c83a122e07f4" />
+
 
 - `SaveFileResource.gd` exposes exported variables (sound, music, cameraShake) — modify or add exported properties for additional player prefs.
 - Swap or regenerate `encryption.tres` if you need to change the encryption key (be mindful that changing the key will prevent old saves from being read).
