@@ -14,7 +14,7 @@ config/name="Godot-Saving-System-Template"
 config/tags=PackedStringArray("research")
 run/main_scene="uid://d10hex1adrqw3"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bkrm0a40rj7lr"
 
 [autoload]
 
