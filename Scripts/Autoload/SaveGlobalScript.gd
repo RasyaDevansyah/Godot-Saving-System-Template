@@ -3,8 +3,23 @@ class_name GScript
 
 
 var safeFile : EncryptedSaveFileResource = EncryptedSaveFileResource.new()
+var playerPrefs : SaveFileResource
 
 func _ready() -> void:
+	loadEncryptedSave()
+	
+
+func loadPlayerPrefsSave():
+	var loadedPlayerPrefs = SaveFileResource.LoadSaveGame()
+	if loadedPlayerPrefs == null:
+		print("Creating new save file...")
+		playerPrefs = SaveFileResource.new()
+		playerPrefs.WriteSaveGame()
+	else:
+		print("Save file loaded successfully.")
+		playerPrefs = loadedPlayerPrefs
+
+func loadEncryptedSave():
 	if !safeFile.LoadSaveGame():
 		var newData : Dictionary = {
 			"scoreboardData" = [
@@ -19,25 +34,9 @@ func _ready() -> void:
 		print("creating new safe file")
 		safeFile.set_data(newData)
 		safeFile.WriteSaveGame()
-		
+	pass
+
 
 func get_scoreboard_data() -> Array:
 	return safeFile.data.get("scoreboardData", null)
 	
-
-#var saveFile : SaveFileResource = preload("uid://gn600tetrp45")
-
-#func _ready():
-	## Attempt to load the save game
-	#var loadedSaveFile = SaveFileResource.LoadSaveGame()
-	## Check if save file loaded successfully
-	#if loadedSaveFile == null:
-		## If not, create a new save file
-		#print("Creating new save file...")
-		#saveFile.WriteSaveGame()
-	#else:
-		## Save file loaded successfully
-		#print("Save file loaded successfully.")
-		#saveFile = loadedSaveFile
-		#
-		#

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c7otsbsq4kjie"]
 
-[ext_resource type="Script" uid="uid://dnoiwc2021kj" path="res://Scripts/scoreboard_row.gd" id="1_fqutw"]
+[ext_resource type="Script" uid="uid://dnoiwc2021kj" path="res://Scenes/Menu/Scoreboard/scoreboard_row.gd" id="1_fqutw"]
 
 [node name="ScoreboardRow" type="HBoxContainer"]
 script = ExtResource("1_fqutw")

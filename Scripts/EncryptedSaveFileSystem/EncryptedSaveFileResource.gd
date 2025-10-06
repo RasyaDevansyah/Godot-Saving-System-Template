@@ -7,8 +7,9 @@ var data : Dictionary
 var access : FileAccess
 
 func _init() -> void:
-	encryption = ResourceLoader.load("res://Resources/encryption.tres")
-
+	#	CHANGE THE ADDRESS TO THE ENCRYPTION KEY
+	encryption = ResourceLoader.load("res://Scripts/EncryptedSaveFileSystem/encryption.tres")
+	
 func set_data(newData : Dictionary) -> void:
 	data = newData
 
@@ -21,6 +22,10 @@ func WriteSaveGame() -> void:
 func LoadSaveGame() -> bool:
 	if FileAccess.file_exists(SAVE_GAME_PATH):
 		access = FileAccess.open_encrypted_with_pass(SAVE_GAME_PATH, FileAccess.READ, encryption.key)
+		if access == null:
+			print("File corrupted")
+			return false
+		
 		data = JSON.parse_string(access.get_as_text())
 		print("safe File loaded")
 		return true

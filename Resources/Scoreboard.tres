@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ScoreboardResource" load_steps=3 format=3 uid="uid://cgk8bd70bc36"]
 
-[ext_resource type="Script" uid="uid://bn11i1dwhxuwt" path="res://Scripts/ScoreboardRowResource.gd" id="1_3xnw5"]
-[ext_resource type="Script" uid="uid://ggn31eysgslg" path="res://Scripts/ScoreboardResource.gd" id="2_wqj5y"]
+[ext_resource type="Script" uid="uid://bn11i1dwhxuwt" path="res://Scenes/Menu/Scoreboard/ScoreboardRowResource.gd" id="1_3xnw5"]
+[ext_resource type="Script" uid="uid://ggn31eysgslg" path="res://Scenes/Menu/Scoreboard/ScoreboardResource.gd" id="2_wqj5y"]
 
 [resource]
 script = ExtResource("2_wqj5y")

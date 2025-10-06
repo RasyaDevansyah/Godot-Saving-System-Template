@@ -3,12 +3,9 @@ class_name SaveFileResource
 
 const SAVE_GAME_PATH := "user://savegame.tres"
 
+#CHANGE THESE VARIABLES TO ANY DATA YOU WANT-----------
 @export var scoreboardRes : ScoreboardResource
-
-func init() -> void:
-	# If scoreboardRes is not already loaded from a file, create a new one.
-	if not scoreboardRes:
-		scoreboardRes = load("uid://cgk8bd70bc36")
+#----------------------------------------------------
 
 func WriteSaveGame():
 	ResourceSaver.save(self, SAVE_GAME_PATH)

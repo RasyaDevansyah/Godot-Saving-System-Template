@@ -1,0 +1,101 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5bmm3oaujrns"]
+
+[sub_resource type="Theme" id="Theme_vsb4k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lti8b"]
+bg_color = Color(0.6745098, 0.69411767, 0.24705882, 0.38039216)
+
+[node name="Scoreboard" type="PanelContainer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -619.0
+offset_top = -178.0
+offset_right = -90.0
+offset_bottom = 199.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = SubResource("Theme_vsb4k")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Control" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Control"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 26
+text = "Scoreboard"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Control"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_lti8b")
+text = "Name"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_lti8b")
+text = "Score"
+horizontal_alignment = 1
+
+[node name="scrollContainer" type="ScrollContainer" parent="MarginContainer/Control"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Control/scrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScoreboardRow" type="HBoxContainer" parent="MarginContainer/Control/scrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/Control/scrollContainer/VBoxContainer/ScoreboardRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Control/scrollContainer/VBoxContainer/ScoreboardRow/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="Name" type="Label" parent="MarginContainer/Control/scrollContainer/VBoxContainer/ScoreboardRow/PanelContainer/MarginContainer"]
+layout_mode = 2
+text = "Adad"
+
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/Control/scrollContainer/VBoxContainer/ScoreboardRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Control/scrollContainer/VBoxContainer/ScoreboardRow/PanelContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="Score" type="Label" parent="MarginContainer/Control/scrollContainer/VBoxContainer/ScoreboardRow/PanelContainer2/MarginContainer"]
+layout_mode = 2
+text = "Adad"
+horizontal_alignment = 2

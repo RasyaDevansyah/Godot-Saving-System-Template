@@ -10,11 +10,19 @@ config_version=5
 
 [application]
 
-config/name="LeaderBoard"
+config/name="Godot-Saving-System-Template"
+config/tags=PackedStringArray("research")
 run/main_scene="uid://d10hex1adrqw3"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalScript="*res://Scripts/GlobalScript.gd"
+GlobalScript="*res://Scripts/Autoload/SaveGlobalScript.gd"
+
+[file_customization]
+
+folder_colors={
+"res://Scripts/EncryptedSaveFileSystem/": "red",
+"res://Scripts/ResourceSaveFileSystem/": "red"
+}

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://d10hex1adrqw3"]
 
-[ext_resource type="Script" uid="uid://c04fu7hgougma" path="res://Scripts/menu.gd" id="1_158mb"]
-[ext_resource type="Script" uid="uid://5jq23depkr8i" path="res://Scripts/scoreboard.gd" id="1_lti8b"]
-[ext_resource type="PackedScene" uid="uid://c7otsbsq4kjie" path="res://Scenes/scoreboard_row.tscn" id="2_ouk20"]
+[ext_resource type="Script" uid="uid://c04fu7hgougma" path="res://Scenes/Menu/menu.gd" id="1_3qr6s"]
+[ext_resource type="Script" uid="uid://5jq23depkr8i" path="res://Scenes/Menu/Scoreboard/scoreboard.gd" id="2_j7r1e"]
+[ext_resource type="PackedScene" uid="uid://c7otsbsq4kjie" path="res://Scenes/Menu/Scoreboard/scoreboard_row.tscn" id="3_8inha"]
 
 [sub_resource type="Theme" id="Theme_vsb4k"]
 
@@ -16,7 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_158mb")
+script = ExtResource("1_3qr6s")
 
 [node name="MenuUI" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -49,7 +49,7 @@ offset_bottom = 199.0
 grow_horizontal = 0
 grow_vertical = 2
 theme = SubResource("Theme_vsb4k")
-script = ExtResource("1_lti8b")
+script = ExtResource("2_j7r1e")
 metadata/_edit_group_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Scoreboard"]
@@ -96,7 +96,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ScoreboardRow" parent="Scoreboard/MarginContainer/Control/scrollContainer/VBoxContainer" instance=ExtResource("2_ouk20")]
+[node name="ScoreboardRow" parent="Scoreboard/MarginContainer/Control/scrollContainer/VBoxContainer" instance=ExtResource("3_8inha")]
 layout_mode = 2
 
 [connection signal="pressed" from="MenuUI/Play" to="." method="_on_play_pressed"]
