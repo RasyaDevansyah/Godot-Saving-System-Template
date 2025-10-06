@@ -26,7 +26,7 @@ A minimal, easy-to-integrate saving system for Godot (resources + encrypted save
 <img width="422" height="162" alt="image" src="https://github.com/user-attachments/assets/df7f3f72-8e1d-411b-a16b-c41dd5904346" />
 
 
-	NOTE: The `Scripts/EncryptedSaveFileSystem` and `Scripts/ResourceSaveFileSystem` folders are intended as standalone templates. If you want to reuse only the saving system in another project, copy these two folders (and `encryption.tres`) into your project and register the `SaveGlobalScript.gd` autoload in that project. Keep the relative resource path or update the path in `EncryptedSaveFileResource.gd` to match your new location.
+NOTE: The `Scripts/EncryptedSaveFileSystem` and `Scripts/ResourceSaveFileSystem` folders are intended as standalone templates. If you want to reuse only the saving system in another project, copy these two folders (and `encryption.tres`) into your project and register the `SaveGlobalScript.gd` autoload in that project. Keep the relative resource path or update the path in `EncryptedSaveFileResource.gd` to match your new location.
 
 2. Register the autoload (singleton):
 	 - In Godot Editor: Project -> Project Settings -> Autoload
